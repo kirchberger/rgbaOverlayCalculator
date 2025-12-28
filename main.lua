@@ -41,6 +41,11 @@ end
 final = layers[1]
 for i = 1,(numLayers-1),1
 do
+  temp = final[4]
+  final[4] = layers[i+1][4] + (1-layers[i+1][4])*layers[i][4]
+  final[1] = ((final[1]*temp*(1-layers[i+1][4])) + layers[i+1][1]*layers[i+1][4])/final[4]
+  final[2] = ((final[2]*temp*(1-layers[i+1][4])) + layers[i+1][2]*layers[i+1][4])/final[4]
+  final[3] = ((final[3]*temp*(1-layers[i+1][4])) + layers[i+1][3]*layers[i+1][4])/final[4]
 
 --  apply next layer
 end
