@@ -1,0 +1,2 @@
+-- Daily Project 1
+-- Alexander Kirchberger
